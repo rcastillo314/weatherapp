@@ -11,6 +11,7 @@ class WeatherApp extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Text('Weather App'),
         leading: IconButton(
+          onPressed: () {},
           icon: Icon(
             Icons.search,
             size: 30.0,
