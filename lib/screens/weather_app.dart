@@ -51,6 +51,7 @@ class WeatherApp extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(20.0),
             child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: 120.0,
@@ -63,6 +64,13 @@ class WeatherApp extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                  Text(
+                    'Hello',
+                    style: GoogleFonts.lato(
+                      fontSize: 22.0,
+                      color: Colors.white,
+                    ),
+                  ),
               ],
             ),
           ),
