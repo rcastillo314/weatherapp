@@ -91,7 +91,7 @@ class WeatherApp extends StatelessWidget {
             PageView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: locationList.length,
-              itemBuilder: (ctx, i) => SingleWidget(),
+              itemBuilder: (ctx, i) => SingleWidget(i),
             ),
           ],
         ),
