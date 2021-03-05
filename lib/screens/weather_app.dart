@@ -26,11 +26,12 @@ class WeatherApp extends StatelessWidget {
               onTap: () {
                 return print('Menu bar clicked');
               },
-            child: SvgPicture.asset(
-              'assets/menu.svg',
-              height: 30.0,
-              width: 30.0,
-              color: Colors.white,
+              child: SvgPicture.asset(
+                'assets/menu.svg',
+                height: 30.0,
+                width: 30.0,
+                color: Colors.white,
+              ),
             ),
           )
         ],
