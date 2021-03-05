@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:weatherapp/models/weather_locations.dart';
 import 'package:weatherapp/widgets/single_widget.dart';
+import 'package:weatherapp/widgets/slider_dot.dart';
 
 class WeatherApp extends StatelessWidget {
   @override
@@ -53,38 +54,7 @@ class WeatherApp extends StatelessWidget {
               margin: EdgeInsets.only(top: 140.0, left: 15.0),
               child: Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 12.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
+                  for (int i = 0; i < locationList.length; i++) SliderDot(true)
                 ],
               ),
             ),
