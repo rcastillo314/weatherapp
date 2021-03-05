@@ -53,23 +53,61 @@ class WeatherApp extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 120.0,
+                  Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 120.0,
+                          ),
+                          Text(
+                            'Kolkata',
+                            style: GoogleFonts.lato(
+                              fontSize: 35.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Hello',
+                            style: GoogleFonts.lato(
+                              fontSize: 22.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Kolkata',
+                            style: GoogleFonts.lato(
+                              fontSize: 35.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Hello',
+                            style: GoogleFonts.lato(
+                              fontSize: 22.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Text(
-                    'Kolkata',
-                    style: GoogleFonts.lato(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    'Hello',
-                    style: GoogleFonts.lato(
-                      fontSize: 22.0,
-                      color: Colors.white,
-                    ),
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 40.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white)),
+                      )
+                    ],
                   ),
                 ],
               ),
