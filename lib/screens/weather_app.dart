@@ -56,13 +56,14 @@ class WeatherApp extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: 120.0,
+                              height: 150.0,
                             ),
                             Text(
                               'Kolkata',
@@ -72,10 +73,14 @@ class WeatherApp extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
+                            SizedBox(
+                              height: 5.0,
+                            ),
                             Text(
-                              'Hello',
+                              '07:50 PM - Monday, 09 Nov 2020',
                               style: GoogleFonts.lato(
-                                fontSize: 22.0,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                             ),
@@ -85,19 +90,31 @@ class WeatherApp extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Kolkata',
+                              '24\u2103',
                               style: GoogleFonts.lato(
-                                fontSize: 35.0,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 85.0,
+                                fontWeight: FontWeight.w300,
                                 color: Colors.white,
                               ),
                             ),
-                            Text(
-                              'Hello',
-                              style: GoogleFonts.lato(
-                                fontSize: 22.0,
-                                color: Colors.white,
-                              ),
+                            Row(
+                              children: [
+                                SvgPicture.asset('assets/moon.svg',
+                                    width: 34.0,
+                                    height: 34.0,
+                                    color: Colors.white),
+                                SizedBox(
+                                  width: 10.0,
+                                ),
+                                Text(
+                                  'Night',
+                                  style: GoogleFonts.lato(
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
