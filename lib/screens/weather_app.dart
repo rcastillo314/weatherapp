@@ -9,8 +9,10 @@ class WeatherApp extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text('Weather App'),
+        elevation: 0.0,
+        title: Text(''),
         leading: IconButton(
+          onPressed: () {},
           icon: Icon(
             Icons.search,
             size: 30.0,
@@ -20,26 +22,61 @@ class WeatherApp extends StatelessWidget {
         actions: [
           Container(
             margin: EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 0.0),
-            child: SvgPicture.asset(
-              'assets/menu.svg',
-              height: 30.0,
-              width: 30.0,
-              color: Colors.white,
+            child: GestureDetector(
+              onTap: () {
+                return print('Menu bar clicked');
+              },
+              child: SvgPicture.asset(
+                'assets/menu.svg',
+                height: 30.0,
+                width: 30.0,
+                color: Colors.white,
+              ),
             ),
           )
         ],
       ),
       body: Container(
-          child: Stack(
-        children: [
-          Image.asset(
-            'assets/night.jpg',
-            fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
-          )
-        ],
-      )),
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/night.jpg',
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+            ),
+            Container(
+              decoration: BoxDecoration(color: Colors.black38),
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 120.0,
+                  ),
+                  Text(
+                    'Kolkata',
+                    style: GoogleFonts.lato(
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    'Hello',
+                    style: GoogleFonts.lato(
+                      fontSize: 22.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
