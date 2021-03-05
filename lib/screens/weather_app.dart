@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weatherapp/models/weather_locations.dart';
 import 'package:weatherapp/widgets/single_widget.dart';
 
 class WeatherApp extends StatelessWidget {
