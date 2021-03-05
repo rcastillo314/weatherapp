@@ -48,6 +48,45 @@ class WeatherApp extends StatelessWidget {
             Container(
               decoration: BoxDecoration(color: Colors.black38),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 140.0, left: 15.0),
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 12.0,
+                    height: 5.0,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 5.0,
+                    height: 5.0,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 5.0,
+                    height: 5.0,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 5.0,
+                    height: 5.0,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                  ),
+                ],
+              ),
+            ),
             SingleWidget()
           ],
         ),
