@@ -56,7 +56,7 @@ class _WeatherAppState extends State<WeatherApp> {
         child: Stack(
           children: [
             Image.asset(
-              'assets/night.jpg',
+              locationList[_currentPage].backgroundUrl,
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
