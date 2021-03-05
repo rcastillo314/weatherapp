@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weatherapp/models/weather_locations.dart';
 
 class FooterWidget extends StatelessWidget {
+  final WeatherLocation locationItem;
+  FooterWidget(this.locationItem);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +29,7 @@ class FooterWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '10',
+                    locationItem.wind.toString(),
                     style: GoogleFonts.lato(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
@@ -65,7 +69,7 @@ class FooterWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '2',
+                    locationItem.rain.toString(),
                     style: GoogleFonts.lato(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
@@ -105,7 +109,7 @@ class FooterWidget extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '10',
+                    locationItem.humidity.toString(),
                     style: GoogleFonts.lato(
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,

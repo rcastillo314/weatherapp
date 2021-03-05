@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weatherapp/models/weather_locations.dart';
 import 'package:weatherapp/widgets/single_widget.dart';
+import 'package:weatherapp/widgets/slider_dot.dart';
 
-class WeatherApp extends StatelessWidget {
+class WeatherApp extends StatefulWidget {
+  @override
+  _WeatherAppState createState() => _WeatherAppState();
+}
+
+class _WeatherAppState extends State<WeatherApp> {
+  int _currentPage = 0;
+  String backgroundImage;
+
+  _onPageChange(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +56,7 @@ class WeatherApp extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              'assets/night.jpg',
+              locationList[_currentPage].backgroundUrl,
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
@@ -52,42 +68,17 @@ class WeatherApp extends StatelessWidget {
               margin: EdgeInsets.only(top: 140.0, left: 15.0),
               child: Row(
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 12.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    width: 5.0,
-                    height: 5.0,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  ),
+                  for (int i = 0; i < locationList.length; i++)
+                    if (i == _currentPage) SliderDot(true) else SliderDot(false)
                 ],
               ),
             ),
-            SingleWidget()
+            PageView.builder(
+              scrollDirection: Axis.horizontal,
+              onPageChanged: _onPageChange,
+              itemCount: locationList.length,
+              itemBuilder: (ctx, i) => SingleWidget(i),
+            ),
           ],
         ),
       ),

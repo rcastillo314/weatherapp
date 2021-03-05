@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weatherapp/models/weather_locations.dart';
 
 class BodyWidget extends StatelessWidget {
+  final WeatherLocation locationItem;
+  BodyWidget(this.locationItem);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -17,7 +21,7 @@ class BodyWidget extends StatelessWidget {
                 height: 150.0,
               ),
               Text(
-                'Kolkata',
+                locationItem.city,
                 style: GoogleFonts.lato(
                   fontSize: 35.0,
                   fontWeight: FontWeight.bold,
@@ -28,7 +32,7 @@ class BodyWidget extends StatelessWidget {
                 height: 5.0,
               ),
               Text(
-                '07:50 PM - Monday, 09 Nov 2020',
+                locationItem.dateTime,
                 style: GoogleFonts.lato(
                   fontSize: 14.0,
                   fontWeight: FontWeight.bold,
@@ -41,7 +45,7 @@ class BodyWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '24\u2103',
+                locationItem.temperature.toString(),
                 style: GoogleFonts.lato(
                   fontSize: 85.0,
                   fontWeight: FontWeight.w300,
@@ -50,13 +54,13 @@ class BodyWidget extends StatelessWidget {
               ),
               Row(
                 children: [
-                  SvgPicture.asset('assets/moon.svg',
+                  SvgPicture.asset(locationItem.iconUrl,
                       width: 34.0, height: 34.0, color: Colors.white),
                   SizedBox(
                     width: 10.0,
                   ),
                   Text(
-                    'Night',
+                    locationItem.forecast,
                     style: GoogleFonts.lato(
                       fontSize: 25.0,
                       fontWeight: FontWeight.w500,
