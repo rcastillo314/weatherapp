@@ -43,7 +43,28 @@ class WeatherApp extends StatelessWidget {
             fit: BoxFit.cover,
             height: double.infinity,
             width: double.infinity,
-          )
+          ),
+          Container(
+            decoration: BoxDecoration(color: Colors.black38),
+          ),
+          Container(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 120.0,
+                ),
+                Text(
+                  'Kolkata',
+                  style: GoogleFonts.lato(
+                    fontSize: 35.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       )),
     );
